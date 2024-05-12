@@ -74,11 +74,12 @@ button:hover {
     transform: translateY(-50px);
 }
 #hours{
-    border: 2px solid #609;
+    border-radius: 10px;
+    border: solid #609;
     padding: 20px; 
     width: 50px;
     height: 5px;
-    font-size: 16px;
+    font-size: 20px;
     text-align: center;
     color:white;
     background-color: black;
@@ -90,18 +91,18 @@ button:hover {
     width: 50px;
     height: 5px;
     text-align: center;
-    font-size: 16px;
+    font-size: 20px;
     color:white;
     background-color: black;
 }
 #seconds{
-    border-radius: 25px;
-    border: 2px solid #609;
+    border-radius: 10px;
+    border: solid #609;
     padding: 20px; 
     width: 50px;
     height: 5px;
     text-align: center;
-    font-size: 16px;
+    font-size: 20px;
     color:white;
     background-color: black;
 }
