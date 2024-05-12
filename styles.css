@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #18C3F8;
+}
+
+.container {
+    text-align: center;
+}
+
+.time-options {
+    margin-bottom: 20px;
+}
+
+.time-options input {
+    width: 60px;
+    margin: 0 5px;
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.timer {
+    margin-top: 20px;
+}
+
+.time {
+    font-size: 50px;
+    margin-top: 10px;
+    text-align: center;
+    margin-top: 0; /* Remove default margin */
+    animation: slideIn 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+    opacity: 0;
+    transform: translateY(-50px);
+}
+#hours{
+    border-radius: 25px;
+    border: 2px solid #609;
+    padding: 20px; 
+    width: 50px;
+    height: 5px;
+    font-size: 16px;
+    animation: backgroundAnimation 5s infinite;
+}
+#minutes{
+    border-radius: 25px;
+    border: 2px solid #609;
+    padding: 20px; 
+    width: 50px;
+    height: 5px;
+    font-size: 16px;
+}
+#seconds{
+    border-radius: 25px;
+    border: 2px solid #609;
+    padding: 20px; 
+    width: 50px;
+    height: 5px;
+    font-size: 16px;
+}
+#h1 {
+    margin-top: 0; /* Remove default margin */
+    animation: slideIn 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+    opacity: 0;
+    font-size: 40px;
+    transform: translateY(-50px);
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#stbtn{
+    margin-top: 0; /* Remove default margin */
+    animation: slideIn2 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+    opacity: 0;
+    border-radius: 25px;
+    padding:20px 20px;
+    transform: translateY(50px); /* Start from below */
+}
+
+@keyframes slideIn2 {
+    0% {
+        opacity: 0;
+        transform: translateY(50px); /* Start from below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Transition to top */
+    }
+}
