@@ -56,6 +56,7 @@
             if (remainingTime <= 0) {
                 clearInterval(timerInterval);
                 updateDisplay(remainingTime);
+                playSound();
                 return;
             }
             updateDisplay(remainingTime);
@@ -125,6 +126,11 @@
             }
             updateDisplay(remainingTime);
         }, 1000);
+    }
+    
+    function playSound() {
+        const audio = document.getElementById("audio");
+        audio.play();
     }
     startCountdown(); // Start the countdown when the page loads
 </script>
