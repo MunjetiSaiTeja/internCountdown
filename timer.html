@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Countdown Timer</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+    .timer {
+        text-align: center;
+    }
+
+    .buttons {
+        display: flex;
+        gap:20px;
+    }
+
+    #resumeBtn {
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+<div class="timer">
+    <br>
+    <div class="time" id="time">00:00:00</div>
+    <br>
+    <div class="buttons">
+        <button onclick="resetTimer()">Reset</button>
+        <button id="stopResumeBtn" onclick="toggleTimer()">Stop</button>
+        <button id="resumeBtn" onclick="resumeTimer()">Resume</button>
+        <button onclick="restartTimer()">Restart</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+    let initialTime;
+    let remainingTime;
+    let timerInterval;
+    let isRunning = false;
+
+    function startCountdown() {
+        isRunning = true;
+        const urlParams = new URLSearchParams(window.location.search);
+        const hours = parseInt(urlParams.get('hours')) || 0;
+        const minutes = parseInt(urlParams.get('minutes')) || 0;
+        const seconds = parseInt(urlParams.get('seconds')) || 0;
+        initialTime = hours * 3600 + minutes * 60 + seconds;
+        remainingTime = initialTime;
+
+        // Countdown timer function
+        timerInterval = setInterval(() => {
+            remainingTime--;
+            if (remainingTime <= 0) {
+                clearInterval(timerInterval);
+                updateDisplay(remainingTime);
+                return;
+            }
+            updateDisplay(remainingTime);
+        }, 1000);
+    }
+
+    function updateDisplay(remainingTime) {
+        if (remainingTime <= 0) {
+            document.getElementById("time").textContent = "Time's Up";
+            document.getElementById("stopResumeBtn").style.display = 'none'; // Hide "Stop" button
+            document.getElementById("resumeBtn").style.display = 'none'; // Hide "Resume" button
+        } else {
+            const hours = Math.floor(remainingTime / 3600);
+            const minutes = Math.floor((remainingTime % 3600) / 60);
+            const seconds = remainingTime % 60;
+            document.getElementById("time").textContent = formatTime(hours) + ":" + formatTime(minutes) + ":" + formatTime(seconds);
+        }
+    }
+
+    function formatTime(time) {
+        return time < 10 ? "0" + time : time;
+    }
+
+    function resetTimer() {
+        clearInterval(timerInterval);
+        isRunning = false;
+        document.getElementById("resumeBtn").style.display = "none";
+        window.location.href = "index.html";
+    }
+
+    function toggleTimer() {
+        if (!isRunning) {
+            startCountdown();
+            document.getElementById("stopResumeBtn").textContent = 'Stop';
+        } else {
+            clearInterval(timerInterval);
+            document.getElementById("stopResumeBtn").style.display = "none";
+            document.getElementById("resumeBtn").style.display = "block";
+        }
+        isRunning = !isRunning;
+    }
+
+    function restartTimer() {
+        clearInterval(timerInterval);
+        isRunning = false;
+        document.getElementById("resumeBtn").style.display = "none";
+        document.getElementById("stopResumeBtn").style.display ="block";
+        startCountdown();
+    }
+
+    function resumeTimer() {
+        document.getElementById("resumeBtn").style.display = "none";
+        startCountdownFromCurrentTime();
+        document.getElementById("stopResumeBtn").textContent = 'Stop';
+        document.getElementById("stopResumeBtn").style.display = "block";
+    }
+
+    function startCountdownFromCurrentTime() {
+        isRunning = true;
+        // Countdown timer function
+        timerInterval = setInterval(() => {
+            remainingTime--;
+            if (remainingTime <= 0) {
+                clearInterval(timerInterval);
+                updateDisplay(remainingTime);
+                return;
+            }
+            updateDisplay(remainingTime);
+        }, 1000);
+    }
+    startCountdown(); // Start the countdown when the page loads
+</script>
+</body>
+</html>
