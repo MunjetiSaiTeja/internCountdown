@@ -85,7 +85,7 @@ button:hover {
 }
 #minutes{
     border-radius: 10px;
-    border: 2px solid #609;
+    border: solid #609;
     padding: 20px; 
     width: 50px;
     height: 5px;
