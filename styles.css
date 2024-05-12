@@ -81,7 +81,7 @@ button:hover {
     height: 5px;
     font-size: 16px;
     text-align: center;
-    background-color: #FFE6E6;
+    background-color: black;
 }
 #minutes{
     border-radius: 25px;
@@ -91,7 +91,7 @@ button:hover {
     height: 5px;
     text-align: center;
     font-size: 16px;
-    background-color: #FFE6E6;
+    background-color: black;
 }
 #seconds{
     border-radius: 25px;
@@ -101,7 +101,7 @@ button:hover {
     height: 5px;
     text-align: center;
     font-size: 16px;
-    background-color: #FFE6E6;
+    background-color: black;
 }
 #h1 {
     margin-top: 0; /* Remove default margin */
