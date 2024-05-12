@@ -66,6 +66,7 @@
     function updateDisplay(remainingTime) {
         if (remainingTime <= 0) {
             document.getElementById("time").textContent = "Time's Up";
+            playSound();
             document.getElementById("stopResumeBtn").style.display = 'none'; // Hide "Stop" button
             document.getElementById("resumeBtn").style.display = 'none'; // Hide "Resume" button
         } else {
