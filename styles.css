@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Times New Roman,serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,10 +7,33 @@ body {
     margin: 0;
     background-color: #18C3F8;
 }
-
 .container {
-    text-align: center;
-}
+        text-align: center;
+        margin-top: 50px; /* Adjust margin as needed */
+    }
+
+    form {
+        display: inline-block;
+        text-align: left;
+    }
+
+    form div {
+        margin-bottom: 10px;
+    }
+
+    label {
+        display: inline-block;
+        width: 80px; /* Adjust width as needed */
+    }
+
+    input[type="number"] {
+        width: 50px; /* Adjust width as needed */
+    }
+
+    button {
+        display: block;
+        margin: 0 auto;
+    }
 
 .time-options {
     margin-bottom: 20px;
@@ -57,7 +80,7 @@ button:hover {
     width: 50px;
     height: 5px;
     font-size: 16px;
-    animation: backgroundAnimation 5s infinite;
+    text-align: center;
 }
 #minutes{
     border-radius: 25px;
@@ -65,6 +88,7 @@ button:hover {
     padding: 20px; 
     width: 50px;
     height: 5px;
+    text-align: center;
     font-size: 16px;
 }
 #seconds{
@@ -73,11 +97,12 @@ button:hover {
     padding: 20px; 
     width: 50px;
     height: 5px;
+    text-align: center;
     font-size: 16px;
 }
 #h1 {
     margin-top: 0; /* Remove default margin */
-    animation: slideIn 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+    animation: slideIn 3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
     opacity: 0;
     font-size: 40px;
     transform: translateY(-50px);
@@ -95,7 +120,7 @@ button:hover {
 }
 #stbtn{
     margin-top: 0; /* Remove default margin */
-    animation: slideIn2 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+    animation: slideIn2 4s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
     opacity: 0;
     border-radius: 25px;
     padding:20px 20px;
