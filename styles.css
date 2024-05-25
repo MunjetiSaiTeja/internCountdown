@@ -8,32 +8,32 @@ body {
     background-color: #86469C;
 }
 .container {
-        text-align: center;
-        margin-top: 50px; /* Adjust margin as needed */
-    }
+    text-align: center;
+    margin-top: 50px;
+}
 
-    form {
-        display: inline-block;
-        text-align: left;
-    }
+form {
+    display: inline-block;
+    text-align: left;
+}
 
-    form div {
-        margin-bottom: 10px;
-    }
+form div {
+    margin-bottom: 10px;
+}
 
-    label {
-        display: inline-block;
-        width: 80px; /* Adjust width as needed */
-    }
+label {
+    display: inline-block;
+    width: 80px;
+}
 
-    input[type="number"] {
-        width: 50px; /* Adjust width as needed */
-    }
+input[type="number"] {
+        width: 50px;
+}
 
-    button {
-        display: block;
-        margin: 0 auto;
-    }
+button {
+    display: block;
+    margin: 0 auto;
+}
 
 .time-options {
     margin-bottom: 20px;
@@ -68,7 +68,7 @@ button:hover {
     font-size: 50px;
     margin-top: 10px;
     text-align: center;
-    margin-top: 0; /* Remove default margin */
+    margin-top: 0;
     animation: slideIn 3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
     opacity: 0;
     transform: translateY(-50px);
@@ -107,7 +107,7 @@ button:hover {
     background-color: black;
 }
 #h1 {
-    margin-top: 0; /* Remove default margin */
+    margin-top: 0;
     animation: slideIn 3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
     opacity: 0;
     font-size: 40px;
@@ -125,21 +125,21 @@ button:hover {
     }
 }
 #stbtn{
-    margin-top: 0; /* Remove default margin */
+    margin-top: 0;
     animation: slideIn2 4s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
     opacity: 0;
     border-radius: 25px;
     padding:20px 20px;
-    transform: translateY(50px); /* Start from below */
+    transform: translateY(50px); 
 }
 
 @keyframes slideIn2 {
     0% {
         opacity: 0;
-        transform: translateY(50px); /* Start from below */
+        transform: translateY(50px);
     }
     100% {
         opacity: 1;
-        transform: translateY(0); /* Transition to top */
+        transform: translateY(0);
     }
 }
